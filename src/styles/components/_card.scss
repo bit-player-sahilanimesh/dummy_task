@@ -1,0 +1,9 @@
+@use 'sass:color';
+@use '../abstracts' as *;
+.card {
+  background-color: $color-dark;
+  border: 1px solid color.adjust($color-dark, $lightness: 10%);
+  padding: 1rem;
+  border-radius: $border-radius;
+  color: $color-light;
+}

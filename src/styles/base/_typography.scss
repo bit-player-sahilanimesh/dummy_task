@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-light;
+  background-color: $color-dark;
+  line-height: 1.6;
+}

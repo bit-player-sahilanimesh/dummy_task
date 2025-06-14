@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+.home {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    color: $color-primary;
+  }
+
+  p {
+    color: $color-light;
+  }
+}
