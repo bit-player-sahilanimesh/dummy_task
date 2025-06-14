@@ -1,11 +1,12 @@
 <div class="profile-card">
   <div class="avatar">
-    <img [src]="user.image" [alt]="user.username" />
+    <img [src]="userProfile.image" [alt]="userProfile.username" />
   </div>
   <div class="info">
-    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-    <p><strong>Username:</strong> {{ user.username }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Gender:</strong> {{ user.gender }}</p>
+    <h2>{{ userProfile.firstName }} {{ userProfile.lastName }}</h2>
+    <p><strong>userProfilename:</strong> {{ userProfile.username }}</p>
+    <p><strong>Email:</strong> {{ userProfile.email }}</p>
+    <p><strong>Gender:</strong> {{ userProfile.gender }}</p>
+    <button class="logout-btn" (click)="logout()">Logout</button>
   </div>
 </div>

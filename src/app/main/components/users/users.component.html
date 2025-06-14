@@ -1,1 +1,65 @@
-<p>users works!</p>
+<div class="users-container">
+  <div class="card">
+    <div class="header">
+      <h2>Users</h2>
+      <input
+        type="text"
+        [formControl]="searchControl"
+        placeholder="Search by name"
+        class="search-input"
+      />
+    </div>
+
+    <div class="table-wrapper">
+      <table class="users-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Avatar</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- If no records found -->
+          <tr *ngIf="users.length === 0">
+            <td colspan="12" class="no-records text-center">No record founded.</td>
+          </tr>
+
+          <!-- Users list -->
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td><img [src]="user.image" class="avatar" alt="Avatar" /></td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.birthDate }}</td>
+            <td class="actions">
+              <button (click)="editUser()">Edit</button>
+              <button (click)="viewDetails()">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">‹</button>
+      <button
+        *ngFor="let page of totalPages; let i = index"
+        (click)="changePage(i + 1)"
+        [class.active]="currentPage === i + 1"
+      >
+        {{ i + 1 }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages.length">›</button>
+    </div>
+  </div>
+</div>
