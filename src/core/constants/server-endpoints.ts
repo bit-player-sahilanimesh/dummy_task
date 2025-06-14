@@ -4,6 +4,7 @@ export const APIS = {
     },
     MAIN: {
         PROFILE: 'auth/me',
-        USER_LIST: 'users/search'
+        USER_LIST: 'users/search',
+        PRODUCT_LIST: 'products/search'
     }
 }
