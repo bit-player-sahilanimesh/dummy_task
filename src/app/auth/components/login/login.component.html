@@ -1,0 +1,23 @@
+<div class="login-wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <h1 class="login-title">Welcome Back</h1>
+
+    <div class="form-control" [class.invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" placeholder="Enter your username" />
+      <small *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+        Username is required
+      </small>
+    </div>
+
+    <div class="form-control" [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
+      <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        Password is required
+      </small>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+</div>

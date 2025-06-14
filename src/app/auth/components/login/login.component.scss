@@ -1,0 +1,84 @@
+@use 'sass:color';
+@use '../../../../styles/abstracts' as *;
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-dark;
+  padding: 1rem;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: color.adjust($color-dark, $lightness: 5%);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.15);
+  color: $color-light;
+
+  .login-title {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-yellow;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-family: $font-primary;
+  }
+
+  .form-control {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.5rem;
+      color: $color-light;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 0.75rem;
+      border: 1px solid $color-yellow;
+      border-radius: 6px;
+      background-color: $color-dark;
+      color: $color-light;
+      transition: 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: color.adjust($color-yellow, $lightness: -10%);
+        box-shadow: 0 0 5px $color-yellow;
+      }
+    }
+
+    small {
+      color: red;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    &.invalid input {
+      border-color: red;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: $color-yellow;
+    color: $color-dark;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($color-yellow, $lightness: -10%);
+    }
+  }
+}
